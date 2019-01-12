@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="http://localhost:3000/single-json" method="post">
+    <input type="text" name="test">
+    <input type="submit">
+</form>
+<script>
+    var xhr = new XMLHttpRequest();
+    var formData = {'age': 26, 'lang': 'JS', 'drink': 'zero coke'};
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === xhr.DONE) {
+            if (xhr.status === 200 || xhr.status === 201) {
+                console.log(xhr.responseText);
+            } else {
+                console.error(xhr.responseText);
+            }
+        }
+    };
+    xhr.open('POST', 'http://localhost:3000/single-json');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send(jsonConvert(formData)); // 폼 데이터 객체 전송
+
+    function jsonConvert(jsonObject) {
+        var result = '';
+        var token = '';
+        Object.keys(jsonObject).map((key, idx) => {
+            if (idx === 1) {
+                token = '&';
+            }
+            result += `${token}${key}=${jsonObject[key]}`;
+        });
+        return result;
+    }
+</script>
+</body>
+</html>
