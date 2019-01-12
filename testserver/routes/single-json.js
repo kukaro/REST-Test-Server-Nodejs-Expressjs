@@ -10,9 +10,9 @@ router.get('/', function (req, res, next) {
 /* POST home page. */
 router.post('/', function (req, res, next) {
     let data = {};
-    console.log(req.body);
-    console.log(req.params);
-    console.log(req.query);
+    for(let key in req.body){
+        data[key] = `${key}#${req.body[key]}`;
+    }
     res.send(data);
 });
 
