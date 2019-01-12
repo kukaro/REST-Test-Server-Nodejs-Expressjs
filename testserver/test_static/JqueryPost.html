@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+</head>
+<body>
+<script>
+    $.ajax({
+        url: 'http://localhost:3000/single-json',
+        type: 'POST',
+        data: {'age': 26, 'lang': 'JS', 'drink': 'zero coke'}
+    }).then((data, textStatus, jqXHR) => {
+        console.log(data);
+    }, (jqXHR, textStatus, errorThrown) => {
+        /*pass*/
+    })
+</script>
+</body>
+</html>

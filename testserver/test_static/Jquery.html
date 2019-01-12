@@ -9,7 +9,13 @@
 <script>
     $.ajax({
         url: 'http://localhost:3000/single-json',
-        type: 'GET'
+        type: 'GET',
+        // success: (data, textStatus, jqXHR) => {
+        //     console.log('success');
+        //     console.log(data);
+        //     console.log(textStatus);
+        //     console.log(jqXHR);
+        // }
     }).done((data, textStatus, jqXHR) => {
         console.log('성공');
         console.log(data);
