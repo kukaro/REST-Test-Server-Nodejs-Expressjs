@@ -3,12 +3,13 @@
 <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="/axios/dist/axios.min.js"></script>
 </head>
-<body>
+<!--<img src="image/image.png">-->
 <body bgcolor="#FFFFFF" id=body>
 <h2 align="center">IFrames Example</h2>
-<iframe src="http://localhost:3000/sub-page" width="400" height="400">
-
-</iframe>
+<script>
+    axios.get('http://localhost:3000/hp');
+</script>
 </body>
 </html>

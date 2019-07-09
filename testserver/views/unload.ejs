@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="/axios/dist/axios.min.js"></script>
+</head>
+<!--<img src="image/image.png">-->
+<body bgcolor="#FFFFFF" id=body onbeforeunload="hi">
+<h2 align="center">IFrames Example</h2>
+<script>
+    window.addEventListener('beforeunload', function (e) {
+        var confirmationMessage = '\o/';
+        axios.get('http://localhost:3000/sess');
+        // (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        // return confirmationMessage; //Webkit, Safari, Chrome
+    });
+</script>
+</body>
+</html>
