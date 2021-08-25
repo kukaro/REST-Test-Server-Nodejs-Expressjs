@@ -13,6 +13,7 @@ var headerPrintRouter = require('./routes/header-print');
 var unlaodRounter = require('./routes/unload');
 var sessRouter = require('./routes/sess');
 var wsRouter = require('./routes/ws');
+var longUrlRouter = require('/routes/long-url');
 var WebSocketServer = require('ws').Server;
 
 var wss = new WebSocketServer({port: 3131});
@@ -58,6 +59,7 @@ app.use('/hp', headerPrintRouter);
 app.use('/unload', unlaodRounter);
 app.use('/sess', sessRouter);
 app.use('/ws', wsRouter);
+app.use('/long-url', longUrlRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
